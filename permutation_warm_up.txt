@@ -1,0 +1,61 @@
+what is permutation?
+= permutation is a secquential or linear order orientation of it's members
+
+math example -
+2! = [1,2] [2,1]
+3! = [1,2,3] [2,1,3] [2,3,1] [1,3,2] [3,2,1] [3,1,2]
+
+math solution -
+3! = [1,2,3] [2,1,3] [2,3,1] [1,3,2] [3,2,1] [3,1,2]
+f([1,2,3]) = |1-1|+|2-2|+|3-3| = 0+0+0 = 0
+f([2,1,3]) = |2-1|+|1-2|+|3-3| = 1+1+0 = 2
+f([2,3,1]) = |2-1|+|3-2|+|1-3| = 1+1+2 = 4
+f([1,3,2]) = |1-1|+|3-2|+|2-3| = 0+1+1 = 2
+f([3,2,1]) = |3-1|+|2-2|+|1-3| = 2+0+2 = 4
+f([3,1,2]) = |3-1|+|1-2|+|2-3| = 2+1+1 = 4
+
+total values = 0,2,4,2,4,4 = 0,2,2,4,4,4 = 0,2,4 = 3
+
+pseudocode -
+1. take input of a n number
+2. make possible number arrangements
+3. make substraction of each number with it's position
+4. convert them in positive value
+5. make sum of each substraction value
+6. take single value from it's common value and count total values
+
+algorithm -
+1. start
+2. input = stdin.readLineSync()
+   int.parse(input)
+3. [i1,i2,i3]
+   [i1,i3,i2]
+   [i2,i1,i3]
+   [i2,i3,i1]
+   [i3,i1,i2]
+   [i3,i2,i1]
+   follow the hands-on practice
+4. [i1-i2-i3]
+   [i1-i3-i2]
+   [i2-i1-i3]
+   [i2-i3-i1]
+   [i3-i1-i2]
+   [i3-i2-i1]
+5. pos_value = abs(value)
+6. sum of all pos_value
+7. take single value from common number
+8. count total values
+
+
+hands-on practice -
+i1
+i2 i3 = i1 i2 i3
+i3 i2 = i1 i3 i2
+
+i2
+i1 i3 = i2 i1 i3
+i3 i1 = i2 i3 i1
+
+i3
+i1 i2 = i3 i1 i2
+i2 i1 = i3 i2 i1
